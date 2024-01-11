@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>create webpage</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            <label for="tn">topic_name</label>
+            <select id="tn" name="tn">
+                <option value="">select topic</option>
+                {% for wo in web %}
+                    <option value="{{ wo.topic_name }}">{{ wo.topic_name }}</option>
+
+
+                {% endfor %}
+            </select>
+            <br><br>
+            <label for="na">name</label>
+            <input type="text" name="na" id="na"><br><br>
+
+            <label for="ur">url</label>
+            <input type="url" name="ur" id="ur">
+            <br><br>
+
+            <label for="em">email</label>
+            <input type="email" name="em" id="em"> <br> <br>
+
+            <input type="submit" value="submit">
+        </form>
+    </center>
+</body>
+</html>
